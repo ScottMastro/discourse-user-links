@@ -1,0 +1,12 @@
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
+#
+# To work with us on translations, join this project:
+# https://translate.discourse.org/
+
+zh_CN:
+  js:
+    signatures:
+      enable_signatures: "启用签名"
+      show_signatures: "在帖子下方显示用户签名"
+      my_signature: "我的签名"

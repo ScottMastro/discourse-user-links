@@ -1,0 +1,10 @@
+{
+  "name": "discourse-signatures-pkmn",
+  "version": "0.1",
+  "repository": "https://github.com/ScottMastro/discourse-signatures-pkmn",
+  "author": "ScottMastro",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-discourse": "^3.0.0"
+  }
+}

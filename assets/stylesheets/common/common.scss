@@ -1,0 +1,29 @@
+.user-links{
+  font-size: large;
+  display: flex;
+  column-gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+
+  .icon{
+    .d-icon-fab-ebay{
+      font-size: xx-large;
+      margin-top: 3px;
+    }
+    .d-icon-fab-ebay:hover{
+      color: #F5AF02 !important;
+    }
+    .d-icon-comment-dollar:hover{
+      color: #3AB54A !important;
+    }
+    .d-icon-hand-holding-heart:hover{
+      color: #A461EF !important;
+    }
+    .d-icon-fab-instagram:hover{
+      color: var(--instagram) !important;
+    }
+    .d-icon-fab-youtube:hover{
+      color: red !important;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
+#
+# To work with us on translations, join this project:
+# https://translate.discourse.org/
+
+hu:
+  site_settings:
+    signatures_enabled: "Engedélyezi a felhasználói aláírásokat a bejegyzések alatt?"
+    signatures_advanced_mode: "Lehetővé teszi, hogy a felhasználók a teljes körű bejegyzésszerkesztőt használják az aláírások létrehozásához. VISSZAÁLLÍTJA az összes meglévő aláírást. A kiszolgáló újraindítása szükséges."
+    signatures_visible_by_default: "Az aláírások alapértelmezés szerint láthatóvá tétele. Így az aláírások a névtelen látogatók számára is láthatóvá válnak."

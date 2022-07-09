@@ -1,0 +1,12 @@
+# WARNING: Never edit this file.
+# It will be overwritten when translations are pulled from Crowdin.
+#
+# To work with us on translations, join this project:
+# https://translate.discourse.org/
+
+he:
+  js:
+    signatures:
+      enable_signatures: "לאפשר חתימות"
+      show_signatures: "להציג את חתימות המשתמשים בתחתית הפוסטים"
+      my_signature: "החתימה שלי"
