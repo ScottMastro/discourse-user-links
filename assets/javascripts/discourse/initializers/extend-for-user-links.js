@@ -74,7 +74,7 @@ export default {
         var youtube_match = getMatches(attrs.youtube_username, /([^@&'\(\)<>\s\\\/]+)/g);
         if (youtube_match.length > 0){
           var youtube_name = youtube_match[0];
-          var button = dec.h('a.icon', { href:"https://www.youtube.com/c/"+youtube_name, title: 'YouTube' }, iconNode('fab-youtube'));
+          var button = dec.h('a.icon', { href:"https://www.youtube.com/user/"+youtube_name, title: 'YouTube' }, iconNode('fab-youtube'));
           buttons.push(button);
         }
         var ebay_match = getMatches(attrs.ebay_username, /([^@&'\(\)<>\s\\\/]+)/g);
