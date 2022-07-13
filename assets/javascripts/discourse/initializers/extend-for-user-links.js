@@ -41,7 +41,6 @@ export default {
     
       const isMobileView = container.lookup("site:main").mobileView;
       const location = isMobileView ? "before" : "after";
-      console.log(location)
       api.decorateWidget(`poster-name:after`, (dec) => {
         const attrs = dec.attrs;
     
