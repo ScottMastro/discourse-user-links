@@ -55,6 +55,5 @@ after_initialize do
   end
 end
 
-register_asset "javascripts/discourse/templates/connectors/user-custom-preferences/user-link-preferences.hbs"
 register_asset "stylesheets/common/common.scss"
 register_asset "stylesheets/mobile/mobile.scss", :mobile
