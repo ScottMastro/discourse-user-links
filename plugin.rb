@@ -56,4 +56,5 @@ after_initialize do
 end
 
 register_asset "stylesheets/common/common.scss"
+register_asset "stylesheets/desktop/desktop.scss", :desktop
 register_asset "stylesheets/mobile/mobile.scss", :mobile
