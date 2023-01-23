@@ -55,31 +55,31 @@ export default {
         var collection_thread_match = getMatches(attrs.collection_thread, /\/t\/[^\/]*\/(\d+)[\/]?/g);
         if (collection_thread_match.length > 0){
           var collection_thread_id = collection_thread_match[0];
-          var button = dec.h('a.icon', { href:"/t/"+collection_thread_id, title: 'Collection' }, iconNode('hand-holding-heart'));
+          var button = dec.h('a.icon', { href:"/t/"+collection_thread_id, target:"_blank", title: 'Collection' }, iconNode('hand-holding-heart'));
           buttons.push(button);
         }
         var wtb_thread_match = getMatches(attrs.wtb_thread, /\/t\/[^\/]*\/(\d+)[\/]?/g);
         if (wtb_thread_match.length > 0){
           var wtb_thread_id = wtb_thread_match[0];
-          var button = dec.h('a.icon', { href:"/t/"+wtb_thread_id, title: 'WTB' }, iconNode('comment-dollar'));
+          var button = dec.h('a.icon', { href:"/t/"+wtb_thread_id, target:"_blank", title: 'WTB' }, iconNode('comment-dollar'));
           buttons.push(button);
         }
         var instagram_match = getMatches(attrs.instagram_username, /([\d\._a-zA-Z]+)/g);
         if (instagram_match.length > 0){
           var instagram_name = instagram_match[0];
-          var button = dec.h('a.icon', { href:"https://www.instagram.com/"+instagram_name, title: 'Instagram' }, iconNode('fab-instagram'));
+          var button = dec.h('a.icon', { href:"https://www.instagram.com/"+instagram_name, target:"_blank", title: 'Instagram' }, iconNode('fab-instagram'));
           buttons.push(button);
         }
         var youtube_match = getMatches(attrs.youtube_username, /([^@&'\(\)<>\s]+)/g);
         if (youtube_match.length > 0){
           var youtube_name = youtube_match[0];
-          var button = dec.h('a.icon', { href:"https://www.youtube.com/"+youtube_name, title: 'YouTube' }, iconNode('fab-youtube'));
+          var button = dec.h('a.icon', { href:"https://www.youtube.com/"+youtube_name, target:"_blank", title: 'YouTube' }, iconNode('fab-youtube'));
           buttons.push(button);
         }
         var ebay_match = getMatches(attrs.ebay_username, /([^@&'\(\)<>\s\\\/]+)/g);
         if (ebay_match.length > 0){
           var ebay_name = ebay_match[0];
-          var button = dec.h('a.icon', { href:"https://www.ebay.com/usr/"+ebay_name, title: 'Ebay' }, iconNode('fab-ebay'));
+          var button = dec.h('a.icon', { href:"https://www.ebay.com/usr/"+ebay_name, target:"_blank", title: 'Ebay' }, iconNode('fab-ebay'));
           buttons.push(button);
         }
     
