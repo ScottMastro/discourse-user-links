@@ -70,7 +70,7 @@ export default {
           var button = dec.h('a.icon', { href:"https://www.instagram.com/"+instagram_name, target:"_blank", title: 'Instagram' }, iconNode('fab-instagram'));
           buttons.push(button);
         }
-        var youtube_match = getMatches(attrs.youtube_username, /([^@&'\(\)<>\s]+)/g);
+        var youtube_match = getMatches(attrs.youtube_username, /([^&'\(\)<>\s]+)/g);
         if (youtube_match.length > 0){
           var youtube_name = youtube_match[0];
           var button = dec.h('a.icon', { href:"https://www.youtube.com/"+youtube_name, target:"_blank", title: 'YouTube' }, iconNode('fab-youtube'));
