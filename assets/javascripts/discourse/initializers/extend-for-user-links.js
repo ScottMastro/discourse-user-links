@@ -79,7 +79,7 @@ export default {
         var ebay_match = getMatches(attrs.ebay_username, /([^@&'\(\)<>\s\\\/]+)/g);
         if (ebay_match.length > 0){
           var ebay_name = ebay_match[0];
-          var button = dec.h('a.icon', { href:"https://www.ebay.com/usr/"+ebay_name, target:"_blank", title: 'Ebay' }, iconNode('fab-ebay'));
+          var button = dec.h('a.icon', { href:"https://www.ebay.com/usr/"+ebay_name+"?mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5338700715&toolid=1001", target:"_blank", title: 'Ebay' }, iconNode('fab-ebay'));
           buttons.push(button);
         }
     
