@@ -2,9 +2,9 @@
 
 # name: discourse-user-links
 # about: Adds user links to Discourse posts
-# version: 0.1
-# author: Scott Mastro
-# url: https://github.com/ScottMastro/
+# version: 1.0.0
+# authors: ScottMastro
+# url: https://github.com/ScottMastro/discourse-user-links
 # transpile_js: true
 
 enabled_site_setting :user_links_enabled
