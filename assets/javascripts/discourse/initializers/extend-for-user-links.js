@@ -26,6 +26,56 @@ function addSetting(api) {
   });
 }
 
+function createEbayPopup(ebay_url, event) {
+  console.log(event)
+
+  // Remove existing popup if any
+  const existingPopup = document.getElementById('ebayPopup');
+  if (existingPopup) {
+    existingPopup.remove();
+  }
+  const buttonRect = event.target.getBoundingClientRect();
+  
+  // Create the popup div
+  const popup = document.createElement('div');
+  popup.style.left = `${buttonRect.left + window.scrollX}px`;
+  popup.style.top = `${buttonRect.bottom + window.scrollY}px`;
+  popup.id = 'ebayPopup';
+  popup.style.position = 'absolute';
+
+  // Add the disclaimer text
+  const disclaimer = document.createElement('div');
+  disclaimer.textContent = 'As an eBay Partner, this forum may be compensated if you make a purchase';
+  popup.appendChild(disclaimer);
+
+  const buttons = document.createElement('div');
+  buttons.classList.add("ebay-buttons")
+
+  // Add the eBay link button
+  const ebayLinkButton = document.createElement('button');
+  ebayLinkButton.textContent = 'Visit eBay Page';
+  ebayLinkButton.classList.add("btn")
+  ebayLinkButton.classList.add("btn-text")
+  ebayLinkButton.classList.add("btn-primary")
+  ebayLinkButton.onclick = () => window.open(ebay_url, '_blank');
+  buttons.appendChild(ebayLinkButton);
+
+  // Add a close button
+  const closeButton = document.createElement('button');
+  closeButton.textContent = 'Close';
+  closeButton.classList.add("btn")
+  closeButton.classList.add("btn-text")
+  closeButton.classList.add("btn-danger")
+  closeButton.onclick = () => popup.remove();
+  buttons.appendChild(closeButton);
+
+  popup.appendChild(buttons);
+
+  // Append the popup to the body
+  document.body.appendChild(popup);
+
+}
+
 export default {
   name: "extend-for-user-links",
   initialize(container) {
@@ -39,8 +89,6 @@ export default {
       api.includePostAttributes("instagram_username");
       api.includePostAttributes("youtube_username");
     
-      const isMobileView = container.lookup("site:main").mobileView;
-      const location = isMobileView ? "before" : "after";
       api.decorateWidget(`poster-name:after`, (dec) => {
         const attrs = dec.attrs;
     
@@ -50,44 +98,58 @@ export default {
           return;
         }
     
-        var buttons = []
+        let buttons = []
         
-        var collection_thread_match = getMatches(attrs.collection_thread, /\/t\/[^\/]*\/(\d+)[\/]?/g);
+        const collection_thread_match = getMatches(attrs.collection_thread, /\/t\/[^\/]*\/(\d+)[\/]?/g);
         if (collection_thread_match.length > 0){
-          var collection_thread_id = collection_thread_match[0];
-          var button = dec.h('a.icon', { href:"/t/"+collection_thread_id, target:"_blank", title: 'Collection' }, iconNode('hand-holding-heart'));
+          const collection_thread_id = collection_thread_match[0];
+          let button = dec.h('a.icon', { href:"/t/"+collection_thread_id, target:"_blank", title: 'Collection' }, iconNode('hand-holding-heart'));
           buttons.push(button);
         }
-        var wtb_thread_match = getMatches(attrs.wtb_thread, /\/t\/[^\/]*\/(\d+)[\/]?/g);
+        const wtb_thread_match = getMatches(attrs.wtb_thread, /\/t\/[^\/]*\/(\d+)[\/]?/g);
         if (wtb_thread_match.length > 0){
-          var wtb_thread_id = wtb_thread_match[0];
-          var button = dec.h('a.icon', { href:"/t/"+wtb_thread_id, target:"_blank", title: 'WTB' }, iconNode('comment-dollar'));
+          const wtb_thread_id = wtb_thread_match[0];
+          let button = dec.h('a.icon', { href:"/t/"+wtb_thread_id, target:"_blank", title: 'WTB' }, iconNode('comment-dollar'));
           buttons.push(button);
         }
-        var instagram_match = getMatches(attrs.instagram_username, /([\d\._a-zA-Z]+)/g);
+        const instagram_match = getMatches(attrs.instagram_username, /([\d\._a-zA-Z]+)/g);
         if (instagram_match.length > 0){
-          var instagram_name = instagram_match[0];
-          var button = dec.h('a.icon', { href:"https://www.instagram.com/"+instagram_name, target:"_blank", title: 'Instagram' }, iconNode('fab-instagram'));
+          const instagram_name = instagram_match[0];
+          let button = dec.h('a.icon', { href:"https://www.instagram.com/"+instagram_name, target:"_blank", title: 'Instagram' }, iconNode('fab-instagram'));
           buttons.push(button);
         }
-        var youtube_match = getMatches(attrs.youtube_username, /([^@&'\(\)<>\s]+)/g);
+        const youtube_match = getMatches(attrs.youtube_username, /([^@&'\(\)<>\s]+)/g);
         if (youtube_match.length > 0){
-          var youtube_name = youtube_match[0];
-          var button = dec.h('a.icon', { href:"https://www.youtube.com/@"+youtube_name, target:"_blank", title: 'YouTube' }, iconNode('fab-youtube'));
+          const youtube_name = youtube_match[0];
+          let button = dec.h('a.icon', { href:"https://www.youtube.com/@"+youtube_name, target:"_blank", title: 'YouTube' }, iconNode('fab-youtube'));
           buttons.push(button);
         }
-        var ebay_match = getMatches(attrs.ebay_username, /([^@&'\(\)<>\s\\\/]+)/g);
-        if (ebay_match.length > 0){
-          var ebay_name = ebay_match[0];
-          var button = dec.h('a.icon', { href:"https://www.ebay.com/usr/"+ebay_name+"?mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5338700715&toolid=1001", target:"_blank", title: 'Ebay' }, iconNode('fab-ebay'));
-          buttons.push(button);
-        }
-    
+        const ebay_match = getMatches(attrs.ebay_username, /([^@&'\(\)<>\s\\\/]+)/g);
+        if (ebay_match.length > 0) {
+          const ebay_name = ebay_match[0];
+          const ebay_url = "https://www.ebay.com/usr/" + ebay_name + "?mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5338700715&toolid=1001";
+                
+          let button = dec.h('a.icon', { 
+                href: "#ebay-disclaimer", 
+                onclick: (e) => {
+                  e.preventDefault();
+                  console.log("here")
+                  createEbayPopup(ebay_url, event);
+                }, 
+                title: 'eBay' 
+              }, 
+              iconNode('fab-ebay')
+            );          
+            
+            buttons.push(button);
+          }
+            
           return [ dec.h("div.user-links", buttons) ];
       });
 
     });
   
-    withPluginApi("0.1", (api) => addSetting(api, siteSettings));
+    withPluginApi("0.8", (api) => addSetting(api, siteSettings));
   },
+  
 };

@@ -27,3 +27,31 @@
     }
   }
 }
+
+
+#ebayPopup {
+  position: absolute;
+  font-size: x-small;
+  display: block;
+  max-width: 200px;
+  padding: 5px;
+  text-align: center;
+  background: var(--secondary);
+  border: 1px solid var(--tertiary);
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  .ebay-buttons{
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    .btn{
+      flex: 1;
+      padding: 6px;
+      margin: 6px;
+    }
+  }
+
+
+}
