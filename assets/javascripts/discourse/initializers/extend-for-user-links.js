@@ -57,7 +57,10 @@ function createEbayPopup(ebay_url, event) {
   ebayLinkButton.classList.add("btn")
   ebayLinkButton.classList.add("btn-text")
   ebayLinkButton.classList.add("btn-primary")
-  ebayLinkButton.onclick = () => window.open(ebay_url, '_blank');
+  ebayLinkButton.onclick = () => {
+    window.open(ebay_url, '_blank');
+    popup.remove();
+  }
   buttons.appendChild(ebayLinkButton);
 
   // Add a close button
