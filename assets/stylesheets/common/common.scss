@@ -2,8 +2,10 @@
   display: flex;
   column-gap: 0.5em;
   overflow-x: scroll;
+  overflow-y: hidden;
+
   align-items: center; 
-  height: 15px;
+  height: 1.3em;
   flex-basis: auto !important;
 
   .icon{
