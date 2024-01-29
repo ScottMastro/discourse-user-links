@@ -2,3 +2,35 @@ plugins:
   user_links_enabled:
     default: true
     client: true
+
+  domain_name:
+    default: ""
+    client: true
+
+  collection_link_allowed:
+    default: false
+    client: true
+
+  wtb_link_allowed:
+    default: false
+    client: true
+
+  instagram_link_allowed:
+    default: false
+    client: true
+
+  youtube_link_allowed:
+    default: false
+    client: true
+
+  x_link_allowed:
+    default: false
+    client: true
+  
+  ebay_link_allowed:
+    default: false
+    client: true
+
+  ebay_affiliate_id:
+    default: ""
+    client: true

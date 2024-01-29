@@ -1,3 +1,11 @@
 en:
   site_settings:
-    user_links_enabled: "Enable user links"
+    domain_name: "Domain name, ex. https://meta.discourse.org"
+    user_links_enabled: "Enable the user links plugin"
+    collection_link_allowed: "Allow user to link to a collection topic"
+    wtb_link_allowed: "Allow user to link to a \"want to buy\" topic"
+    instagram_link_allowed: "Allow user to link to an Instagram account"
+    youtube_link_allowed: "Allow user to link to a YouTube"
+    x_link_allowed: "Allow user to link to an X account"
+    ebay_link_allowed: "Allow user to link to an eBay account"
+    ebay_affiliate_id: "eBay EPN affiliate ID"

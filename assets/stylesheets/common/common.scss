@@ -1,33 +1,44 @@
 .user-links{
-  font-size: large;
   display: flex;
   column-gap: 0.5em;
-  align-items: center;
-  justify-content: center;
-  
+  overflow-x: scroll;
+  align-items: center; 
+  height: 15px;
+  flex-basis: auto !important;
+
   .icon{
-    .d-icon-fab-ebay{
-      font-size: xx-large;
-      margin-top: 3px;
-    }
-    .d-icon-fab-ebay:hover{
-      color: #F5AF02 !important;
-    }
+    flex: 1;
+    font-size: large;
+
     .d-icon-comment-dollar:hover{
-      color: #3AB54A !important;
+      color: #3AB54A;
     }
     .d-icon-hand-holding-heart:hover{
-      color: #A461EF !important;
+      color: #A461EF;
     }
     .d-icon-fab-instagram:hover{
-      color: var(--instagram) !important;
+      color: var(--instagram);
     }
     .d-icon-fab-youtube:hover{
-      color: red !important;
+      color: red;
+    }
+    .d-icon-fab-twitter:hover{
+      color: var(--twitter);
+    }
+    .d-icon-fab-ebay{
+      font-size: xx-large;
+    }
+    .d-icon-fab-ebay:hover{
+      color: #F5AF02;
     }
   }
 }
 
+.archetype-private_message{
+  .user-links{
+    display: none !important;
+  }
+}
 
 #ebayPopup {
   position: absolute;

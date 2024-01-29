@@ -1,49 +1,7 @@
 {{#if siteSettings.user_links_enabled}}
   <hr>
   <h1>{{i18n "user_links.preferences_title"}}</h1>
-  <div class="control-group user-link">
-    <label class="control-label">{{d-icon 'hand-holding-heart'}} {{i18n "user_links.collection_thread"}}</label>
-    <div class="controls">
-        <label class="text-label">
-          {{input type="text" class="input-xxlarge" value=model.custom_fields.collection_thread}}
-        </label>
-    </div>
-  </div>
 
-  <div class="control-group user-link">
-    <label class="control-label">{{d-icon 'comment-dollar'}} {{i18n "user_links.wtb_thread"}}</label>
-    <div class="controls">
-        <label class="text-label">
-          {{input type="text" class="input-xxlarge" value=model.custom_fields.wtb_thread}}
-        </label>
-    </div>
-  </div>
+  {{user-link-settings model=model siteSettings=siteSettings}}
 
-  <div class="control-group user-link">
-    <label class="control-label">{{d-icon 'fab-instagram'}} {{i18n "user_links.instagram_username"}}</label>
-    <div class="controls">
-        <label class="text-label">
-          {{input type="text" class="input-xxlarge" value=model.custom_fields.instagram_username}}
-        </label>
-    </div>
-  </div>
-
-  <div class="control-group user-link">
-    <label class="control-label">{{d-icon 'fab-youtube'}} {{i18n "user_links.youtube_username"}}</label>
-    <div class="controls">
-        <label class="text-label">
-          {{input type="text" class="input-xxlarge" value=model.custom_fields.youtube_username}}
-        </label>
-    </div>
-  </div>
-
-  <div class="control-group user-link">
-    <label class="control-label">{{d-icon 'fab-ebay'}} {{i18n "user_links.ebay_username"}}</label>
-    <div class="controls">
-        <label class="text-label">
-          {{input type="text" class="input-xxlarge" value=model.custom_fields.ebay_username}}
-        </label>
-    </div>
-  </div>
-  
 {{/if}}

@@ -1,0 +1,122 @@
+{{#if siteSettings.collection_link_allowed}}
+
+  <div class="control-group user-link">
+    <label class="control-label">{{d-icon 'hand-holding-heart'}} {{i18n "user_links.collection_thread"}}</label>
+    <div class="controls">
+        <label class="text-label">
+          <Input
+            @type="text"
+            class="input-xxlarge"
+            @value={{model.custom_fields.collection_thread}}
+            {{on "input" (action "getCollectionTopicId" )}}
+            {{on "paste" (action "getCollectionTopicId" )}}
+          />
+        </label>
+      <a href="/t/{{this.collectionId}}" target="_blank">
+        {{d-icon 'link'}} {{ siteSettings.domain_name }}/t/{{this.collectionId}}
+      </a>
+    </div>
+  </div>
+
+{{/if}}
+
+{{#if siteSettings.wtb_link_allowed}}
+
+<div class="control-group user-link">
+  <label class="control-label">{{d-icon 'comment-dollar'}} {{i18n "user_links.wtb_thread"}}</label>
+  <div class="controls">
+      <label class="text-label">
+        <Input
+          @type="text"
+          class="input-xxlarge"
+          @value={{model.custom_fields.wtb_thread}}
+          {{on "input" (action "getWtbTopicId" )}}
+          {{on "paste" (action "getWtbTopicId" )}}
+        />
+      </label>
+      <a href="/t/{{this.wtbId}}" target="_blank">
+        {{d-icon 'link'}} {{ siteSettings.domain_name }}/t/{{this.wtbId}}
+      </a>
+  </div>
+</div>
+
+{{/if}}
+
+
+{{#if this.siteSettings.youtube_link_allowed}}
+
+  <div class="control-group user-link">
+    <label class="control-label">{{d-icon 'fab-youtube'}} {{i18n "user_links.youtube_username"}}</label>
+    <div class="controls">
+      <label class="text-label">
+        <Input
+          @type="text"
+          class="input-xxlarge"
+          @value={{this.model.custom_fields.youtube_username}}
+        />
+      </label>
+      <a href="https://www.youtube.com/@{{this.model.custom_fields.youtube_username}}" target="_blank">
+        {{d-icon 'link'}} https://www.youtube.com/@{{this.model.custom_fields.youtube_username}}
+      </a>
+    </div>
+  </div>
+
+{{/if}}
+
+{{#if siteSettings.instagram_link_allowed}}
+
+  <div class="control-group user-link">
+    <label class="control-label">{{d-icon 'fab-instagram'}} {{i18n "user_links.instagram_username"}}</label>
+    <div class="controls">
+        <label class="text-label">
+          <Input
+            @type="text"
+            class="input-xxlarge"
+            @value={{this.model.custom_fields.instagram_username}}
+          />
+        </label>
+        <a href="https://www.instagram.com/{{this.model.custom_fields.instagram_username}}" target="_blank">
+          {{d-icon 'link'}} https://www.instagram.com/{{this.model.custom_fields.instagram_username}}
+        </a>
+    </div>
+  </div>
+{{/if}}
+
+{{#if siteSettings.x_link_allowed}}
+
+  <div class="control-group user-link">
+    <label class="control-label">{{d-icon 'fab-twitter'}} {{i18n "user_links.x_username"}}</label>
+    <div class="controls">
+        <label class="text-label">
+          <Input
+            @type="text"
+            class="input-xxlarge"
+            @value={{this.model.custom_fields.x_username}}
+          />
+        </label>
+        <a href="https://www.x.com/{{this.model.custom_fields.x_username}}" target="_blank">
+          {{d-icon 'link'}} https://www.x.com/{{this.model.custom_fields.x_username}}
+        </a>
+    </div>
+  </div>
+{{/if}}
+
+{{#if siteSettings.ebay_link_allowed}}
+
+  <div class="control-group user-link">
+    <label class="control-label">{{d-icon 'fab-ebay'}} {{i18n "user_links.ebay_username"}}</label>
+    <div class="controls">
+        <label class="text-label">
+          <Input
+            @type="text"
+            class="input-xxlarge"
+            @value={{this.model.custom_fields.ebay_username}}
+          />
+        </label>
+        <a href="https://www.ebay.com/usr/{{this.model.custom_fields.ebay_username}}" target="_blank">
+          {{d-icon 'link'}} https://www.ebay.com/usr/{{this.model.custom_fields.ebay_username}}
+        </a>      
+    </div>
+  </div>
+  
+{{/if}}

@@ -2,8 +2,11 @@ en:
   js:
     user_links:
       preferences_title: "Custom User Links"
+      
       collection_thread: "My collection thread"
       wtb_thread: "My WTB thread"
       instagram_username: "My Instagram username"
       youtube_username: "My YouTube username"
       ebay_username: "My Ebay username"
+      x_username: "My X username"
+    
