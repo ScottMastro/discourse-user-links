@@ -14,8 +14,8 @@ register_svg_icon "fab-ebay" if respond_to?(:register_svg_icon)
 register_svg_icon "fab-youtube" if respond_to?(:register_svg_icon)
 register_svg_icon "fab-twitter" if respond_to?(:register_svg_icon)
 
-register_svg_icon "fa-comment-dollar" if respond_to?(:register_svg_icon)
-register_svg_icon "fa-hand-holding-heart" if respond_to?(:register_svg_icon)
+register_svg_icon "comment-dollar" if respond_to?(:register_svg_icon)
+register_svg_icon "hand-holding-heart" if respond_to?(:register_svg_icon)
 
 
 DiscoursePluginRegistry.serialized_current_user_fields << "collection_thread"
